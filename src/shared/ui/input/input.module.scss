@@ -1,0 +1,37 @@
+
+.container{
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+
+}
+
+.input{
+  width: 100%;
+  min-height: 40px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  padding: 6px 12px;
+}
+
+.label{
+  font-size: 14px;
+}
+
+.labelDescription{
+  margin-left:2px;
+  font-size: 15px;
+  color: #767676;
+}
+.inputWrapper{
+  display: flex;
+  position: relative;
+}
+.error{
+  height: 20px;
+  display: block;
+  font-size: 12px;
+  color: red;
+}
