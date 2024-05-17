@@ -1,16 +1,15 @@
 import {object, string} from "yup";
-import {createNameLikeValidationHelper} from "@/shared/utils";
+import {createEmailValidation, createNameLikeValidationHelper, createPasswordValidation} from "@/shared/utils";
 import regex from "@/shared/regex";
 
 
 const registration = object({
-    first_name:createNameLikeValidationHelper("Full Name"),
-    last_name:createNameLikeValidationHelper("Last Name"),
-    username:createNameLikeValidationHelper("Last Name")
+    first_name:createNameLikeValidationHelper("Full Name").required("First name is required field"),
+    last_name:createNameLikeValidationHelper("Last Name").required("Last name is required field"),
+    username:createNameLikeValidationHelper("Username").required("Username is required field")
         .matches(regex.onlyLettersNumbersUnderscore),
-    email:string().email("You should provide valid email"),
-    password:string()
-        .min(8, "Password should contain at least 8 chars")
+    email:createEmailValidation(),
+    password:createPasswordValidation(),
 })
 
 

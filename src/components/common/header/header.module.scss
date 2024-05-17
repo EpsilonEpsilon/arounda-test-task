@@ -1,0 +1,25 @@
+@import "./../../../shared/styles/_variable";
+.header{
+  height: 70px;
+  padding: 15px;
+}
+
+.navbar{
+  flex: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.link{
+  color:$link_color;
+  font-size: 15px;
+}
+
+.logoContainer{
+  flex: 1;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}

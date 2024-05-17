@@ -6,16 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "npx prisma migrate dev",
+    "postinstall": "prisma generate",
+    "update": "prisma generate && npx prisma migrate dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.0",
+    "@prisma/client": "5.14.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/unsplash-js": "^7.0.0",
+    "blurhash": "^2.0.5",
+    "clsx": "^2.1.1",
+    "crypto": "^1.0.1",
+    "fast-blurhash": "^1.1.2",
+    "jsonwebtoken": "^9.0.2",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.4",
+    "react-toastify": "^10.0.5",
     "sass": "^1.77.1",
+    "server-only": "^0.0.1",
     "sharp": "^0.33.4",
+    "unsplash-api": "^1.2.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -24,6 +38,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "prisma": "5.14.0",
     "typescript": "^5"
   }
 }

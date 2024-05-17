@@ -15,7 +15,7 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## Technical Stack
+## Tech Stack
 - Next.js
 - SCSS
 - Mobx
@@ -25,6 +25,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - prisma
 
 ## Implemented Features
+- authorization and registration
+- gallery stripes
+- searching and pagination
 
 ## Implemented Pages
- - Registration Page (/join)
+ - Registration Page ```/join```
+ - Login Page ```/login```

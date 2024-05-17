@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 declare interface HasChildren{
-    children:HasChildren
+    children:ReactNode
 }

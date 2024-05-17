@@ -1,7 +1,8 @@
 enum Routes{
     Initial = "/",
     Registration = "/join",
-    Login = "/login"
+    Login = "/login",
+    Search = "/search",
 }
 
 

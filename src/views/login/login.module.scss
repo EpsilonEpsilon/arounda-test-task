@@ -1,0 +1,50 @@
+@import "../../shared/styles/_variable";
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  padding: 48px 64px;
+  width: 100%;
+  gap: 24px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header{
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subHeader{
+  text-align: center;
+  margin: 0;
+  font-size: 15px;
+}
+
+.footer{
+
+}
+
+.link{
+  font-size: 15px;
+  color: $link_color;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

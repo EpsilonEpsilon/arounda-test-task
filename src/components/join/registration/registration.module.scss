@@ -25,6 +25,10 @@
 .header{
   font-size: 48px;
   margin-bottom: 16px;
+
+  @media(max-width: 380px){
+    font-size: 32px;
+  }
 }
 
 .subHeader{
@@ -35,4 +39,10 @@
 .link{
   color: $link_color;
   text-decoration: underline;
+}
+
+.submitButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

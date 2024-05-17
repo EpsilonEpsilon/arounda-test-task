@@ -1,5 +1,6 @@
 const Page = ()=>{
-    return <></>
+    return <div>Searching...</div>
 }
+
 
 export default Page;

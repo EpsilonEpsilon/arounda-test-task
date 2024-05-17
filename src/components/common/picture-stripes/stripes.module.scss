@@ -1,0 +1,24 @@
+@import "../../../shared/styles/_variable";
+
+.button{
+  color:$link_color;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  background: 0;
+}
+
+.selectedButton{
+  text-decoration: underline;
+}
+.buttonContainer{
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+
+  @media(max-width: 950px){
+    display: none;
+  }
+}
