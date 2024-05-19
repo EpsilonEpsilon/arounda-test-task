@@ -2,6 +2,7 @@
 
 import {FC} from "react";
 import {HasChildren} from "@/types/global";
+import Analytics from "@/lib/providers/analytics";
 import ToastProvider from "@/lib/providers/toast";
 
 interface IProps extends HasChildren{}
@@ -10,9 +11,11 @@ interface IProps extends HasChildren{}
 const Provider:FC<IProps> = ({children})=>{
     return (
         <>
-            <ToastProvider>
-                {children}
-            </ToastProvider>
+            <Analytics>
+                <ToastProvider>
+                    {children}
+                </ToastProvider>
+            </Analytics>
         </>
     )
 }
