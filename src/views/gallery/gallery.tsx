@@ -18,7 +18,8 @@ const Gallery:FC<IProps> = async ({page})=>{
         "use server"
         const params = new URLSearchParams();
         params.set("page", page.toString());
-        redirect(Routes.Initial +"/?"+params.toString());
+        console.log()
+        redirect("/?"+params.toString());
     }
     return (
         <>
