@@ -5,7 +5,7 @@ import {FC, useState} from "react";
 import styles from "./stripes.module.scss"
 import clsx from "clsx";
 import {MasonryComponent} from "@/components/common";
-import {useRouter} from "next/navigation";
+import {notFound, useRouter} from "next/navigation";
 import Routes from "@/lib/routes";
 
 interface IProps{
@@ -14,7 +14,7 @@ interface IProps{
 const PictureStripes:FC<IProps> = ({pictures})=>{
     const router = useRouter();
     const [stripes, setStripes] = useState<3 | 5>(3);
-    if(!pictures) return <div>NO PICTURES</div>//todo create separate component
+    if(!pictures) return notFound();
 
     const handleClickImage = (pic:Basic)=>{
         router.push(Routes.Picture(pic.id));

@@ -7,6 +7,7 @@ import blurHashToDataURL from "@/shared/utils/createBlurDataUrl";
 import clsx from "clsx";
 import Link from "next/link";
 import Routes from "@/lib/routes";
+import {notFound} from "next/navigation";
 
 interface IProps{
     id:string,
@@ -17,7 +18,7 @@ const Picture:FC<IProps> = async ({id, isModal})=>{
         .getData();
 
     if(!pic) return (
-            <div>No Image Information</div>
+           notFound()
     )
     return (
         <div className={styles["container"]}>
