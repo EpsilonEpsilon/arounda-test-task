@@ -75,13 +75,12 @@ const Item:FC<IItem> = ({pictures, quality, onImageClick})=>{
     return (
         <div className={styles["item"]}>
             {pictures.map((pic)=>(
-                <Link scroll={false} href={Routes.Picture(pic.id)} passHref>
+                <Link key = {pic.id} scroll={false} href={Routes.Picture(pic.id)} passHref>
                     <Image
                         // onClick={()=>onImageClick && onImageClick(pic)}
                         priority
                         placeholder={pic.blur_hash! ? "blur" : "empty"}
                         blurDataURL={blurHashToDataURL(pic.blur_hash!)}
-                        key = {pic.id}
                         width={pic.width}
                         height={pic.height}
                         style={{aspectRatio:`${pic.width} / ${pic.height}`}}
