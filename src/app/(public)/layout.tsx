@@ -1,21 +1,20 @@
-"use client"
-
 import {HasChildren} from "@/types/global";
 import React, {FC, ReactNode} from "react";
 import {HeaderComponent} from "@/components/common";
-import {usePathname} from "next/navigation";
+import ModalSlot from "@/app/(public)/modal-slot";
 
 interface IProps extends HasChildren{
     modal:ReactNode
 }
 const Layout:FC<IProps> = ({children, modal})=>{
-    const pathname = usePathname();
-    const shouldShowModal = pathname.includes("/picture/");
+
     return (
         <>
             <HeaderComponent/>
             {children}
-            {shouldShowModal && modal}
+            <ModalSlot>
+                {modal}
+            </ModalSlot>
             <div id="modal-root" />
         </>
     )

@@ -23,18 +23,20 @@ const Picture:FC<IProps> = async ({id, isModal})=>{
         <Suspense>
             <div className={styles["container"]}>
                 <div className={styles["wrapper"]}>
-                    <Image
-                        priority
-                        placeholder={pic.blur_hash! ? "blur" : "empty"}
-                        blurDataURL={blurHashToDataURL(pic.blur_hash!)}
-                        key = {pic.id}
-                        width={pic.width}
-                        height={pic.height}
-                        style={{aspectRatio:`${pic.width} / ${pic.height}`}}
-                        className={clsx(styles["img"], isModal && styles["modal_img"])}
-                        src={pic.urls.regular}
-                        alt={pic.description || ""}
-                    />
+                    <div className={styles["imageLayout"]}>
+                        <Image
+                            priority
+                            placeholder={pic.blur_hash! ? "blur" : "empty"}
+                            blurDataURL={blurHashToDataURL(pic.blur_hash!)}
+                            key = {pic.id}
+                            width={pic.width}
+                            height={pic.height}
+                            style={{aspectRatio:`${pic.width} / ${pic.height}`}}
+                            className={clsx(styles["img"], isModal && styles["modal_img"])}
+                            src={pic.urls.regular}
+                            alt={pic.description || ""}
+                        />
+                    </div>
                     <div className = {styles["content"]}>
                         <div className={styles["contentItem"]}>
                             <p className={styles["label"]}>Like</p>

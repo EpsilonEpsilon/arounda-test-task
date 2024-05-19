@@ -1,5 +1,5 @@
 "use client"
-import {KeyboardEvent} from "react"
+import {KeyboardEvent, useEffect} from "react"
 import {SearchInputComponent} from "@/shared/ui/search-input";
 import styles from "./search.module.scss";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
@@ -11,6 +11,10 @@ const HeaderSearchInput = ()=>{
     const params = useSearchParams();
     const [value, setValue] = useState(params.get("query") || "");
 
+
+    useEffect(()=>{
+        setValue(params.get("query") || "")
+    },[params])
     const handleKeyDown = (e:KeyboardEvent)=>{
         if(e.code !== "Enter" || !value) return;
 

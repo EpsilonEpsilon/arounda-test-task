@@ -6,3 +6,4 @@ export {default as hashPwdHelper} from "./hashPwd"
 export {default as getServerSideAuthStateHelper} from "./getServersideAuthState";
 export {default as splitArrayHelper} from './splitArray';
 export {default as getPageNumbers} from "./getPageNumbers";
+export {default as removeServersideCookie} from './removeServersideCookie'

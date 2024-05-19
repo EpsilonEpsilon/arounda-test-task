@@ -23,3 +23,11 @@
   display: flex;
   gap: 20px;
 }
+
+.button{
+  color:$link_color;
+  font-size: 15px;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}

@@ -57,7 +57,7 @@ const Registration = ()=>{
                     {...register("password")}
                     hint={"(min. 8 char)"} label = "Password"/>
 
-                <PrimaryButtonComponent className = {styles["submitButton"]} disabled={!isValid || loading} type={"submit"}>
+                <PrimaryButtonComponent className = {styles["submitButton"]} disabled={loading} type={"submit"}>
                     {!loading && "Join"}
                     {loading && <Spinner size={SpinnerSize.small}/>}
                 </PrimaryButtonComponent>

@@ -1,7 +1,8 @@
 "use server"
 import {cookies} from "next/headers";
 import jwt from "jsonwebtoken";
-const getServersideAuthState = ()=>{
+import "server-only"
+const getServersideAuthState = async ()=>{
     const token = cookies().get("token");
     if(!token?.value) return false;
     try{

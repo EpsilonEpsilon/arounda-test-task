@@ -9,4 +9,8 @@
   color: #fff;
   font-size: 15px;
   cursor: pointer;
+
+  &:disabled{
+    background: linear-gradient(to bottom, #0000 50%, #0b151e0f 100%), rgba(17, 17, 17, 0.32);
+  }
 }
