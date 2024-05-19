@@ -2,13 +2,14 @@
 import {KeyboardEvent} from "react"
 import {SearchInputComponent} from "@/shared/ui/search-input";
 import styles from "./search.module.scss";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useState} from "react";
 import Routes from "@/lib/routes";
 
 const HeaderSearchInput = ()=>{
     const router = useRouter();
-    const [value, setValue] = useState("");
+    const params = useSearchParams();
+    const [value, setValue] = useState(params.get("query") || "");
 
     const handleKeyDown = (e:KeyboardEvent)=>{
         if(e.code !== "Enter" || !value) return;

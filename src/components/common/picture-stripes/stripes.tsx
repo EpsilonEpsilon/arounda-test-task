@@ -5,14 +5,20 @@ import {FC, useState} from "react";
 import styles from "./stripes.module.scss"
 import clsx from "clsx";
 import {MasonryComponent} from "@/components/common";
+import {useRouter} from "next/navigation";
+import Routes from "@/lib/routes";
 
 interface IProps{
     pictures:Basic[] | undefined;
 }
 const PictureStripes:FC<IProps> = ({pictures})=>{
+    const router = useRouter();
     const [stripes, setStripes] = useState<3 | 5>(3);
     if(!pictures) return <div>NO PICTURES</div>//todo create separate component
 
+    const handleClickImage = (pic:Basic)=>{
+        router.push(Routes.Picture(pic.id));
+    }
     return (
         <>
             <div className = {styles["buttonContainer"]}>
@@ -29,7 +35,7 @@ const PictureStripes:FC<IProps> = ({pictures})=>{
                     5 stripes
                 </button>
             </div>
-            <MasonryComponent columns={stripes} pictures={pictures}/>
+            <MasonryComponent onImageClick={handleClickImage} columns={stripes} pictures={pictures}/>
         </>
     )
 }

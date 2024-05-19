@@ -5,3 +5,4 @@ export {default as createPasswordValidation} from "./createPasswordValidation";
 export {default as hashPwdHelper} from "./hashPwd"
 export {default as getServerSideAuthStateHelper} from "./getServersideAuthState";
 export {default as splitArrayHelper} from './splitArray';
+export {default as getPageNumbers} from "./getPageNumbers";

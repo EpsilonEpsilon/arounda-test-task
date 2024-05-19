@@ -10,13 +10,27 @@
 .spinner {
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  border-top: 0;
+  border-top-color: transparent !important;
+  border-style: solid;
 }
 
 .small{
   width: 15px;
   height: 15px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: 2px solid #fff;
-
+  border-width: 2px;
 }
 
+.transparent{
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.filled{
+  border-color: #000;
+}
+
+.big{
+  width: 25px;
+  height: 25px;
+  border-width: 4px;
+}

@@ -9,16 +9,19 @@ import createPattern from "@/lib/masonry";
 import {blurHashToDataURL} from "@/shared/utils/createBlurDataUrl";
 import {splitArrayHelper} from "@/shared/utils";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import Link from "next/link";
+import Routes from "@/lib/routes";
 
 
 
 interface IProps{
     pictures:Basic[],
     columns:3 | 5,
+    onImageClick?:(pic:Basic)=>void,
 }
 const oddPattern = ["l", "p", "l"];
 const evenPattern = ["p", "l", "p"];
-const Masonry:FC<IProps> = ({pictures, columns})=>{
+const Masonry:FC<IProps> = ({pictures, columns, onImageClick})=>{
     const splitArray = splitArrayHelper(pictures, columns);
     const matches950 = useMediaQuery("(max-width:950px)");
     const matches750 = useMediaQuery("(max-width:750px)");
@@ -38,7 +41,7 @@ const Masonry:FC<IProps> = ({pictures, columns})=>{
         <>
             <Layout columns={getResponsiveColumnsCount()}>
                 {Array.from(new Array(getResponsiveColumnsCount()).keys()).map((index)=>(
-                    <Item quality={getImageQuality()} key = {index} pictures={createPattern(splitArray[index], (index % 2 ? evenPattern : oddPattern) as ["l", "p"])}/>
+                    <Item onImageClick={onImageClick} quality={getImageQuality()} key = {index} pictures={createPattern(splitArray[index], (index % 2 ? evenPattern : oddPattern) as ["l", "p"])}/>
                 ))}
             </Layout>
         </>
@@ -65,15 +68,18 @@ const Layout:FC<ILayoutProps> = ({children, columns})=>{
 interface IItem{
     pictures:Basic[],
     quality:"regular" | "small",
+    onImageClick?:(pic:Basic)=>void,
 }
-const Item:FC<IItem> = ({pictures, quality})=>{
+const Item:FC<IItem> = ({pictures, quality, onImageClick})=>{
+
     return (
-        <div>
-            <div className={styles["item"]}>
-                {pictures.map((pic)=>(
+        <div className={styles["item"]}>
+            {pictures.map((pic)=>(
+                <Link scroll={false} href={Routes.Picture(pic.id)} passHref>
                     <Image
+                        // onClick={()=>onImageClick && onImageClick(pic)}
                         priority
-                        placeholder="blur"
+                        placeholder={pic.blur_hash! ? "blur" : "empty"}
                         blurDataURL={blurHashToDataURL(pic.blur_hash!)}
                         key = {pic.id}
                         width={pic.width}
@@ -83,8 +89,8 @@ const Item:FC<IItem> = ({pictures, quality})=>{
                         src={pic.urls[quality]}
                         alt={pic.description || ""}
                     />
-                ))}
-            </div>
+                </Link>
+            ))}
         </div>
     )
 }

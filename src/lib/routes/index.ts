@@ -1,8 +1,9 @@
-enum Routes{
-    Initial = "/",
-    Registration = "/join",
-    Login = "/login",
-    Search = "/search",
+const Routes = {
+    Initial:"/",
+    Registration: "/join",
+    Login: "/login",
+    Search: "/search",
+    Picture:(id:number | string)=>`/picture/${id}`
 }
 
 
