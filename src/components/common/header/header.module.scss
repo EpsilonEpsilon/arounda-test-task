@@ -10,11 +10,17 @@
   display: flex;
   justify-content: center;
   gap: 50px;
+  @media (max-width: 450px) {
+    gap: 18px;
+  }
 }
 
 .link{
   color:$link_color;
   font-size: 15px;
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
 }
 
 .logoContainer{
