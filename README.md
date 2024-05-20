@@ -33,3 +33,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Implemented Pages
  - Registration Page ```/join```
  - Login Page ```/login```
+ - Gallery ```/```
+ - Search ```/search```
+ - single photo page ```/picture```
